@@ -13,5 +13,5 @@ void Achievement::setScoreValue(int v)
 }
 void Achievement::achievementInfo() {
 
-	cout << "\t\t\tTitle:" << m_title << "; Description:" << m_description << "; Score value:" << m_scoreValue << endl;
+	cout << "\t\t\tTitle:" << m_title << ";\tDescription:" << m_description << ";\tScore value:" << m_scoreValue << endl;
 }

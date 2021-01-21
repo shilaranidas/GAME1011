@@ -20,9 +20,8 @@ void Game::addAchievementAt(Achievement achiv, int index)
 {
 	achievements[index] = achiv;
 }
-void Game::gameInfo() {
-	cout << "Game Information:" << endl;
-	cout << "\t\tName:" << m_name << "; Publisher:" << m_publisher << "; Developer:" << m_developer << endl;
+void Game::gameInfo() {	
+	cout << "\t\tName:" << m_name << ";\tPublisher:" << m_publisher << ";\tDeveloper:" << m_developer << endl;
 	for (int i = 0; i < no_of_achievement; i++)
 	{
 		cout << "\t\tAchievement " << (i + 1) << "Information:" << endl;

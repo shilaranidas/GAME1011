@@ -18,7 +18,7 @@ void Platform::addGameAt(Game game, int index)
 }
 void Platform::platformInfo() {
 	cout << "Platform Information:" << endl;
-	cout << "\tName:" << m_name << "; Manufacturer:" << m_manufacturer << endl;
+	cout << "\tName:" << m_name << ";\tManufacturer:" << m_manufacturer << endl;
 	for (int i = 0; i < no_of_game; i++)
 	{
 		cout << "\tGame " << (i + 1) << "Information:" << endl;

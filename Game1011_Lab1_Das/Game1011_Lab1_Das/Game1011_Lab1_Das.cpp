@@ -53,7 +53,7 @@ int main()
 		}	
 		myPlatform.addGameAt(gameObj, i);
 	}
-	
+	cout << "NOW ALL INFORMATION TOGETHER:" << endl;
 	myPlatform.platformInfo();
 }
 
