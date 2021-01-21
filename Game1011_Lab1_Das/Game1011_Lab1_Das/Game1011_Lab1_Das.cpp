@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include "Platform.h"
+
 using namespace std;
 int main()
 {
@@ -44,7 +45,8 @@ int main()
 			cin >> value;
 			achievementObj.setTitle(value);
 			cout << "\t\tAchievement Description: ";
-			cin >> value;
+			//cin >> value;
+			
 			achievementObj.setDescription(value);
 			cout << "\t\tAchievement Score Value: ";
 			cin >> score;
