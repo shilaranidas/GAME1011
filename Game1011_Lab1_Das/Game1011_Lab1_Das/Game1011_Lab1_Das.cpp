@@ -19,7 +19,7 @@ int main()
 	myPlatform.setManufacturer(value);
 	cout << "How many numbers of game for this platform? ";
 	cin >> gameSize;
-	myPlatform.setGames(gameSize);
+	myPlatform.setGameNo(gameSize);
 	for (int i = 0; i < gameSize; i++)
 	{
 		cout << "Enter information about Game " << (i + 1) << " for this platform: " << endl;
@@ -35,7 +35,7 @@ int main()
 		gameObj.setDeveloper(value);
 		cout << "\tHow many numbers of achievement for this game? ";
 		cin >> achievSize;
-		gameObj.setAchievements(achievSize);
+		gameObj.setAchievementNo(achievSize);
 		for (int j = 0; j < achievSize; j++)
 		{
 			cout << "Enter information about Achievement " << (j + 1) << " of game" << (i + 1) << ": \n";
@@ -49,6 +49,7 @@ int main()
 			cout << "\t\tAchievement Score Value: ";
 			cin >> score;
 			achievementObj.setScoreValue(score);
+			gameObj.addAchievementAt(achievementObj, i);
 		}		
 	}
 	

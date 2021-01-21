@@ -14,7 +14,8 @@ public:
 	void setName(string n);
 	void setPublisher(string p);
 	void setDeveloper(string d);
-	void setAchievements(int c);
+	void setAchievementNo(int c);
+	void addAchievementAt(Achievement achiv, int index);
 	void gameInfo();
 };
 
