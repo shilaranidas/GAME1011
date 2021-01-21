@@ -49,8 +49,9 @@ int main()
 			cout << "\t\tAchievement Score Value: ";
 			cin >> score;
 			achievementObj.setScoreValue(score);
-			gameObj.addAchievementAt(achievementObj, i);
-		}		
+			gameObj.addAchievementAt(achievementObj, j);
+		}	
+		myPlatform.addGameAt(gameObj, i);
 	}
 	
 	myPlatform.platformInfo();

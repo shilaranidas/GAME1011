@@ -11,7 +11,8 @@ private:
 public:
 	void setName(string n);
 	void setManufacturer(string m);
-	void setGames(int c);
+	void setGameNo(int c);
+	void addGameAt(Game achiv, int index);
 	void platformInfo();
 };
 

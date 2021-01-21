@@ -7,10 +7,14 @@ void Platform::setManufacturer(string m)
 {
 	m_manufacturer = m;
 }
-void Platform::setGames(int c)
+void Platform::setGameNo(int c)
 {
 	games = new Game[c];
 	no_of_game = c;
+}
+void Platform::addGameAt(Game game, int index)
+{
+	games[index] = game;
 }
 void Platform::platformInfo() {
 	cout << "Platform Information:" << endl;
