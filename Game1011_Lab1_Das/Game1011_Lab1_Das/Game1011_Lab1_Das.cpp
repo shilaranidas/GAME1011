@@ -2,12 +2,29 @@
 //
 
 #include <iostream>
-#include "Achievement.h"
+#include "Game.h"
 using namespace std;
 int main()
 {
 	string value;
 	int score;
+	int gameSize, achievSize;
+	Game gameObj;
+	cout << "\Game Name: ";
+	cin >> value;
+	gameObj.setName(value);
+	cout << "\Game Publisher: ";
+	cin >> value;
+	gameObj.setPublisher(value);
+	cout << "\Game Developer: ";
+	cin >> value;
+	gameObj.setDeveloper(value);
+	cout << "\How many numbers of achievement for this game? ";
+	cin >> achievSize;
+	gameObj.setAchievements(achievSize);
+	for (int j = 0; j < achievSize; j++)
+	{
+		cout << "Enter information about Achivement " << (j + 1) << " of game"  << ": ";
 	Achievement achievementObj;
 	cout << "\tAchievement Title: ";
 	cin >> value;
@@ -18,6 +35,7 @@ int main()
 	cout << "\tAchievement Score Value: ";
 	cin >> score;
 	achievementObj.setScoreValue(score);
+	}
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
