@@ -38,7 +38,7 @@ int main()
 		gameObj.setAchievements(achievSize);
 		for (int j = 0; j < achievSize; j++)
 		{
-			cout << "Enter information about Achivement " << (j + 1) << " of game" << (i + 1) << ": ";
+			cout << "Enter information about Achievement " << (j + 1) << " of game" << (i + 1) << ": \n";
 			Achievement achievementObj;
 			cout << "\t\tAchievement Title: ";
 			cin >> value;
@@ -49,10 +49,10 @@ int main()
 			cout << "\t\tAchievement Score Value: ";
 			cin >> score;
 			achievementObj.setScoreValue(score);
-		}
-		
-
+		}		
 	}
+	
+	myPlatform.platformInfo();
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
