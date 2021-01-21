@@ -2,10 +2,22 @@
 //
 
 #include <iostream>
-
+#include "Achievement.h"
+using namespace std;
 int main()
 {
-    std::cout << "Hello World!\n";
+	string value;
+	int score;
+	Achievement achievementObj;
+	cout << "\tAchievement Title: ";
+	cin >> value;
+	achievementObj.setTitle(value);
+	cout << "\tAchievement Description: ";
+	cin >> value;
+	achievementObj.setDescription(value);
+	cout << "\tAchievement Score Value: ";
+	cin >> score;
+	achievementObj.setScoreValue(score);
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
