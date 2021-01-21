@@ -2,39 +2,56 @@
 //
 
 #include <iostream>
-#include "Game.h"
+#include "Platform.h"
 using namespace std;
 int main()
 {
+	Platform myPlatform;
 	string value;
 	int score;
 	int gameSize, achievSize;
-	Game gameObj;
-	cout << "\Game Name: ";
+	cout << "Enter information about Platform : " << endl;
+	cout << "Platform Name: ";
 	cin >> value;
-	gameObj.setName(value);
-	cout << "\Game Publisher: ";
+	myPlatform.setName(value);
+	cout << "Platform Manufacturer: ";
 	cin >> value;
-	gameObj.setPublisher(value);
-	cout << "\Game Developer: ";
-	cin >> value;
-	gameObj.setDeveloper(value);
-	cout << "\How many numbers of achievement for this game? ";
-	cin >> achievSize;
-	gameObj.setAchievements(achievSize);
-	for (int j = 0; j < achievSize; j++)
+	myPlatform.setManufacturer(value);
+	cout << "How many numbers of game for this platform? ";
+	cin >> gameSize;
+	myPlatform.setGames(gameSize);
+	for (int i = 0; i < gameSize; i++)
 	{
-		cout << "Enter information about Achivement " << (j + 1) << " of game"  << ": ";
-	Achievement achievementObj;
-	cout << "\tAchievement Title: ";
-	cin >> value;
-	achievementObj.setTitle(value);
-	cout << "\tAchievement Description: ";
-	cin >> value;
-	achievementObj.setDescription(value);
-	cout << "\tAchievement Score Value: ";
-	cin >> score;
-	achievementObj.setScoreValue(score);
+		cout << "Enter information about Game " << (i + 1) << " for this platform: " << endl;
+		Game gameObj;
+		cout << "\tGame Name: ";
+		cin >> value;
+		gameObj.setName(value);
+		cout << "\tGame Publisher: ";
+		cin >> value;
+		gameObj.setPublisher(value);
+		cout << "\tGame Developer: ";
+		cin >> value;
+		gameObj.setDeveloper(value);
+		cout << "\tHow many numbers of achievement for this game? ";
+		cin >> achievSize;
+		gameObj.setAchievements(achievSize);
+		for (int j = 0; j < achievSize; j++)
+		{
+			cout << "Enter information about Achivement " << (j + 1) << " of game" << (i + 1) << ": ";
+			Achievement achievementObj;
+			cout << "\t\tAchievement Title: ";
+			cin >> value;
+			achievementObj.setTitle(value);
+			cout << "\t\tAchievement Description: ";
+			cin >> value;
+			achievementObj.setDescription(value);
+			cout << "\t\tAchievement Score Value: ";
+			cin >> score;
+			achievementObj.setScoreValue(score);
+		}
+		
+
 	}
 }
 
