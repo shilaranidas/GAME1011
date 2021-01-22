@@ -19,7 +19,8 @@ void Game::setMaxAchievementNo(int c)
 }
 Achievement Game::getAchievementFrom(int index)
 {
-	return achievements[index];
+	if(index<max_no_of_achievement)
+		return achievements[index];	
 }
 string Game::updateAchievementAt(Achievement achiv, int index)
 {	
@@ -28,9 +29,13 @@ string Game::updateAchievementAt(Achievement achiv, int index)
 }
 string Game::addAchievement(Achievement achiv)
 {
-	current_no_of_achievement++;
-	achievements[current_no_of_achievement] = achiv;
-	return "Added achievement";
+	if (max_no_of_achievement > current_no_of_achievement)
+	{
+		current_no_of_achievement++;
+		achievements[current_no_of_achievement] = achiv;
+		return "Added achievement";
+	}
+	return "add achievement failed";
 }
 string Game::deleteAchievementAt(int index)
 {
