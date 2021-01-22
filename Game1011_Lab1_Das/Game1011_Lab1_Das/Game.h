@@ -17,5 +17,6 @@ public:
 	void setAchievementNo(int c);
 	void addAchievementAt(Achievement achiv, int index);
 	void gameInfo();
+	~Game();
 };
 

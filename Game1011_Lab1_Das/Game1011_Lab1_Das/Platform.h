@@ -14,5 +14,6 @@ public:
 	void setGameNo(int c);
 	void addGameAt(Game achiv, int index);
 	void platformInfo();
+	~Platform();
 };
 

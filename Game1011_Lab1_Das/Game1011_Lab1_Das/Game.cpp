@@ -28,3 +28,10 @@ void Game::gameInfo() {
 		achievements[i].achievementInfo();
 	}
 }
+Game::~Game()
+{
+	if (no_of_achievement > 0)
+	{
+		delete[] achievements;
+	}
+}

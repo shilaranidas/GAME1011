@@ -25,3 +25,10 @@ void Platform::platformInfo() {
 		games[i].gameInfo();
 	}
 }
+Platform::~Platform()
+{
+	if (no_of_game > 0)
+	{
+		delete[] games;
+	}
+}
