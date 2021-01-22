@@ -11,26 +11,48 @@ void Game::setDeveloper(string d)
 {
 	m_developer = d;
 }
-void Game::setAchievementNo(int c)
+//allocate max number
+void Game::setMaxAchievementNo(int c)
 {
 	achievements = new Achievement[c];
-	no_of_achievement = c;
+	max_no_of_achievement = c;
 }
-void Game::addAchievementAt(Achievement achiv, int index)
+Achievement Game::getAchievementFrom(int index)
 {
+	return achievements[index];
+}
+string Game::updateAchievementAt(Achievement achiv, int index)
+{	
 	achievements[index] = achiv;
+	return "updateded achievement";
+}
+string Game::addAchievement(Achievement achiv)
+{
+	current_no_of_achievement++;
+	achievements[current_no_of_achievement] = achiv;
+	return "Added achievement";
+}
+string Game::deleteAchievementAt(int index)
+{
+	if (current_no_of_achievement >= index)
+		for (int i = index; i < current_no_of_achievement; i++)
+		{
+			achievements[current_no_of_achievement] = achievements[current_no_of_achievement+1];
+		}	
+	current_no_of_achievement--;
+	return "deleted achievement";
 }
 void Game::gameInfo() {	
 	cout << "\t\tName:" << m_name << ";\tPublisher:" << m_publisher << ";\tDeveloper:" << m_developer << endl;
-	for (int i = 0; i < no_of_achievement; i++)
+	for (int i = 0; i < current_no_of_achievement; i++)
 	{
-		cout << "\t\tAchievement " << (i + 1) << "Information:" << endl;
+		cout << "**********Achievement " << (i + 1) << "Information**********" << endl;
 		achievements[i].achievementInfo();
 	}
 }
 Game::~Game()
 {
-	if (no_of_achievement > 0)
+	if (current_no_of_achievement > 0)
 	{
 		delete[] achievements;
 	}

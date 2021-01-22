@@ -9,13 +9,17 @@ private:
 	string m_developer;
 	//Achievement achievements[3];
 	Achievement* achievements;
-	int no_of_achievement;
+	int current_no_of_achievement;
+	int max_no_of_achievement;
 public:
 	void setName(string n);
 	void setPublisher(string p);
 	void setDeveloper(string d);
-	void setAchievementNo(int c);
-	void addAchievementAt(Achievement achiv, int index);
+	void setMaxAchievementNo(int c);
+	Achievement getAchievementFrom(int index);
+	string addAchievement(Achievement achiv);
+	string updateAchievementAt(Achievement achiv, int index);
+	string deleteAchievementAt(int index);
 	void gameInfo();
 	~Game();
 };
