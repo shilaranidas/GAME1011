@@ -27,6 +27,9 @@
     <ClCompile Include="Achievement.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Platforms.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Platform.h">
@@ -36,6 +39,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Achievement.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Platforms.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

@@ -1,4 +1,14 @@
 #include "Platform.h"
+Platform::Platform()
+{
+	games = new Game[5];
+	max_no_of_game = 5;
+	current_no_of_game = 0;
+}
+int Platform::getGameNo()
+{
+	return current_no_of_game;
+}
 void Platform::setName(string n)
 {
 	m_name = n;
@@ -7,21 +17,22 @@ void Platform::setManufacturer(string m)
 {
 	m_manufacturer = m;
 }
-void Platform::setMaxGameNo(int c)
-{
-	games = new Game[c];
-	max_no_of_game = c;
-}
+
 Game Platform::getGameFrom(int index)
 {
 	if (index < max_no_of_game)
 	return games[index];
 }
-string Platform::updateGameAt(Game game, int index)
+
+void Platform::getAllGame()
 {
-	games[index] = game;
-	return "updateded game.";
+	for (int i = 0; i < current_no_of_game; i++)
+	{
+		cout << "*****Game " << (i + 1) << "Information*****" << endl;
+		games[i].gameInfo();
+	}
 }
+
 string Platform::deleteGameAt(int index)
 {
 	if (current_no_of_game >= index)
@@ -30,14 +41,14 @@ string Platform::deleteGameAt(int index)
 			games[current_no_of_game] = games[current_no_of_game + 1];
 		}
 	current_no_of_game--;
-	return "deleteded game.";
+	return "deleteed game.";
 }
 string Platform::addGame(Game game)
 {
 	if (max_no_of_game > current_no_of_game)
-	{
-		current_no_of_game++;
+	{		
 		games[current_no_of_game] = game;
+		current_no_of_game++;
 		return "Added game";
 	}
 	return "add game failed";
@@ -45,11 +56,11 @@ string Platform::addGame(Game game)
 void Platform::platformInfo() {
 	cout << "Platform Information:" << endl;
 	cout << "\tName:" << m_name << ";\tManufacturer:" << m_manufacturer << endl;
-	for (int i = 0; i < current_no_of_game; i++)
+	/*for (int i = 0; i < current_no_of_game; i++)
 	{
 		cout << "*****Game " << (i + 1) << "Information*****" << endl;
 		games[i].gameInfo();
-	}
+	}*/
 }
 Platform::~Platform()
 {
