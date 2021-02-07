@@ -1,9 +1,9 @@
 #include "Character.h"
 Character::Character(string name, int health, Weapon* w)
 {
-	m_name = name;
-	m_healthValue = health;
-	m_weapon = w;
+	SetName(name);
+	SetHealthValue(health);
+	SetWeapon(w);
 }
 Character::~Character()
 {

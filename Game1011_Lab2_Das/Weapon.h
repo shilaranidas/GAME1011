@@ -26,6 +26,7 @@ public:
 	}
 	~Weapon() {
 		delete[] m_abilities;
+		m_abilities = nullptr;
 	}
 	string GetName() { return m_name; }
 	string GetDescription() { return m_description; }
@@ -34,16 +35,6 @@ public:
 	string* m_abilities;
 	string addAbility(string ability);
 	friend ostream& operator<<(ostream& out, Weapon& w);
-	//ostream& operator<<(ostream& out)
-	/*{
-		out << "Weapon name:" << w.GetName() << "; description: " << w.GetDescription() << "; damage value: " << w.GetDamage() << endl;
-		out << "Ablities: ";
-		for (int i = 0; i < w.GetCurrentNoAbility() - 1; i++)
-		{
-			out << "[" << w.m_abilities[i] << "], ";
-		}
-		out << w.m_abilities[w.GetCurrentNoAbility() - 1] << "]" << endl;
-		return out;
-	}*/
+	
 };
 

@@ -9,6 +9,7 @@ class Character
 	Weapon* m_weapon;
 public:
 	Character(){
+		m_name = "anonymous";
 		m_healthValue = 0;
 		m_weapon = new Weapon();
 	}
