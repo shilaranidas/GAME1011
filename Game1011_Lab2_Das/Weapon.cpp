@@ -18,6 +18,6 @@ ostream& operator<<(ostream& out, Weapon& w)
 	{
 		out << "[" << w.m_abilities[i] << "], ";
 	}
-	out << w.m_abilities[w.GetCurrentNoAbility() - 1] << "]" << endl;
+	out <<"["<< w.m_abilities[w.GetCurrentNoAbility() - 1] << "]" << endl;
 	return out;
 }
