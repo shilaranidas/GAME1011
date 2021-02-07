@@ -141,6 +141,7 @@
   <ItemGroup>
     <ClCompile Include="Character.cpp" />
     <ClCompile Include="Game1011_Lab2_Das.cpp" />
+    <ClCompile Include="SpecialCharacter.cpp" />
     <ClCompile Include="Weapon.cpp" />
   </ItemGroup>
   <ItemGroup>
