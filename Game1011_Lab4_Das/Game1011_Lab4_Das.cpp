@@ -58,7 +58,39 @@ void reverse(const string& str) {
 		reverse(str.substr(0, numOfChars - 1));
 	}
 }
+///////////////////
+void swap(int* a, int* b)
+{
+	int temp = *a;
+	*a = *b;
+	*b = temp;
+}
+int partition(int A[], int low, int high)
+{
+	int x = A[high];
+	int i = low - 1; // Index of smaller element and indicates the right position of pivot found so far
 
+	for (int j = low; j <= high - 1; j++)
+	{
+		if (A[j] <= x)
+		{
+			i++;
+			swap(&A[i], &A[j]);
+		}
+	}
+	swap(&A[i + 1], &A[high]);
+	return (i + 1);
+}
+
+void quickSort(int A[], int p, int r)
+{
+	if (p < r)
+	{
+		int q = partition(A, p, r);
+		quickSort(A, p, q - 1);
+		quickSort(A, q + 1, r);
+	}
+}
 int main()
 {
 	std::cout << "\t\t\t\tLab 4:- Recursion" << endl;
@@ -103,7 +135,19 @@ int main()
 			else std::cout << str << " is Not Palindrome" << endl;
 			break;
 		case 2:
-			
+			max = 100; //set the upper bound to generate the random number
+			srand(time(0));
+			cout << "The random number is: ";
+			for (int i = 0; i < n; i++) { //generate 10 random numbers
+				a[i] = rand() % max;
+				cout << " " << a[i];
+			}
+			cout << endl;
+			quickSort(a, 0, 9);
+			cout << "The random number is after sort: ";
+			for (int i = 0; i < n; i++)
+				cout << " " << a[i];
+			cout << endl;
 			break;
 		case 3:
 			cout << "Enter a string: ";
