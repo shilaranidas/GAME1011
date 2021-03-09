@@ -18,6 +18,7 @@ public:
     SimpleVector(const SimpleVector&); //copy constructor
     ~SimpleVector();//destructor
     void push_back(T);//insert the value at the end of the array. return a message if the array is full or successfully pushed
+    T pop_back(); //remove the last element from the array and return last removed item.
     int size() const
     {
         return arraySize;
@@ -72,6 +73,23 @@ void SimpleVector<T>::push_back(T item)
         cout << "Successfully pushed " << item << endl;
     }
 
+}
+template<class T>
+T SimpleVector<T>::pop_back()
+{
+    if (currentSize > 0)
+    {
+        T temp = aptr[currentSize - 1];
+        aptr[currentSize - 1] = T();
+        currentSize--;
+        cout << "Successfully popped " << temp << endl;
+        return temp;
+    }
+    else
+    {
+        cout << "Array is empty now!";
+    }
+    return T();
 }
 template<class T>
 T& SimpleVector<T>::operator[](int sub)
