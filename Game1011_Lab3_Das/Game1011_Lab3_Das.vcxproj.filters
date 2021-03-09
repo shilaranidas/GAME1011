@@ -23,5 +23,8 @@
     <ClInclude Include="SimpleHeader.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="SearchableVector.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

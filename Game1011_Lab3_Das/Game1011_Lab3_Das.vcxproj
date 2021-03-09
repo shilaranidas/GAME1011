@@ -142,6 +142,7 @@
     <ClCompile Include="Game1011_Lab3_Das.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="SearchableVector.h" />
     <ClInclude Include="SimpleHeader.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
