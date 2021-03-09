@@ -46,25 +46,32 @@ int main()
     sTable.print();
     cout <<endl<<endl<< "======================================Q2===================================" << endl << endl;
     SearchableVector<int> iTable1(SIZE);
-    SearchableVector<double> dTable1(SIZE);
+    SearchableVector<string> sTable1(SIZE);
     for (int i = 0; i < SIZE; i++)
     {
         iTable1[i] = i * 2;
-        dTable1[i] = i * 2.14;
+        sTable1[i] = i + 'a';
+        sTable1[i] += "test";
     }
     //display values
-    cout << "These values are in iTable1:\n";
+    cout << "These values are in iTable1: ";
     iTable1.print();
-    cout << "These values are in dTable1:\n";
-    dTable1.print();
+    cout << "These values are in sTable1: ";
+    sTable1.print();
     //search the vectors
     int result;
-    cout << "Searching for the number 6 in iTable1.\n";
-    result = iTable1.findItem(6);
+    cout << "Searching for the number 6 in iTable1: ";
+    result = iTable1.findItemBinary(6);
     if (result == -1)
         cout << "6 was not found.\n";
     else
-        cout << "6 was found at subscript " << result;
+        cout << "6 was found at subscript " << result << endl;
+    cout << "Searching for the string ftest in sTable1: ";
+    result = sTable1.findItemBinary("ftest");
+    if (result == -1)
+        cout << "ftest was not found.\n";
+    else
+        cout << "ftest was found at subscript " << result << endl;
     return 0;
 }
 
