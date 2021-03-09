@@ -41,6 +41,24 @@ bool isPalindrome(string str)
 	return isPal(str, 0, h - 1);
 }
 
+// Function to reverse a string 
+// function definition
+void reverse(const string& str) {
+
+	// store the size of the string
+	size_t numOfChars = str.size();
+
+	if (numOfChars == 1) {
+		cout << str << endl;
+	}
+	else {
+		cout << str[numOfChars - 1];
+
+		// function recursion
+		reverse(str.substr(0, numOfChars - 1));
+	}
+}
+
 int main()
 {
 	std::cout << "\t\t\t\tLab 4:- Recursion" << endl;
@@ -88,9 +106,10 @@ int main()
 			
 			break;
 		case 3:
-			
+			cout << "Enter a string: ";
+			std::getline(std::cin, str);
+			reverse(str);
 			break;
-
 		}
 	} while (mainmenu != 4);
 }
