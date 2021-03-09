@@ -2,6 +2,45 @@
 #include <string>
 #include <time.h>
 using namespace std;
+// A recursive function that 
+// check a str[begin..end] is 
+// palindrome or not. 
+bool isPal(string str, int begin, int end)
+{
+
+	// If there is only one character 
+	if (begin == end)
+		return true;
+
+	// If first and last 
+	// characters do not match 
+	if (str[begin] != str[end])
+		return false;
+
+	// If there are more than  
+	// two characters, check if  
+	// middle substring is also  
+	// palindrome or not. 
+	if (begin < end + 1)
+		return isPal(str, begin + 1, end - 1);
+
+	return true;
+}
+bool isPalindrome(string str)
+{
+
+	//for working with sample (taco cat)
+	//remove space from string
+	str.erase(remove_if(str.begin(), str.end(), isspace), str.end());
+	int h = str.length();
+	//for working with sample (A nut for a jar of tuna)
+	//convert all to lowercase
+	for (int i = 0; i < h; i++)
+		str[i] = tolower(str[i]);
+	if (h == 0) return true;
+	return isPal(str, 0, h - 1);
+}
+
 int main()
 {
 	std::cout << "\t\t\t\tLab 4:- Recursion" << endl;
@@ -39,7 +78,11 @@ int main()
 		switch (mainmenu)
 		{
 		case 1:
-			
+			cout << "Enter a string: ";
+			std::getline(std::cin, str);
+			result = isPalindrome(str);
+			if (result) std::cout << str << " is palindrome" << endl;
+			else std::cout << str << " is Not Palindrome" << endl;
 			break;
 		case 2:
 			
