@@ -3,6 +3,7 @@
 #include <iomanip>
 #include "SimpleHeader.h"
 #include "SearchableVector.h"
+#include "SortableVector.h"
 using namespace std;
 
 
@@ -73,6 +74,39 @@ int main()
     else
         cout << "ftest was found at subscript " << result << endl;
     cout << endl << endl << "======================================Q3===================================" << endl << endl;
+    SortableVector<int> iTable2(SIZE);
+    SortableVector<string> sTable2(SIZE);
+    iTable2[0] = 5;
+    iTable2[1] = 1;
+    iTable2[2] = 15;
+    iTable2[3] = 2;
+    iTable2[4] = 4;
+    iTable2[5] = 12;
+    iTable2[6] = 21;
+    iTable2[7] = 3;
+    iTable2[8] = 5;
+    iTable2[9] = 8;
+    sTable2[0] = "5 a";
+    sTable2[1] = "1 a";
+    sTable2[2] = "15 a";
+    sTable2[3] = "2 a";
+    sTable2[4] = "4 a";
+    sTable2[5] = "12 a";
+    sTable2[6] = "21 a";
+    sTable2[7] = "3 a";
+    sTable2[8] = "5 a";
+    sTable2[9] = "8 a";
+    //display values
+    cout << "These values are in iTable2: ";
+    iTable2.print();
+    iTable2.sort();
+    cout << "These values are in iTable2 after sort: ";
+    iTable2.print();
+    cout << "These values are in sTable2: ";
+    sTable2.print();
+    sTable2.sort();
+    cout << "These values are in sTable2 after sort: ";
+    sTable2.print();
     return 0;
 }
 
