@@ -17,6 +17,7 @@ public:
     SimpleVector(int); //constructor
     SimpleVector(const SimpleVector&); //copy constructor
     ~SimpleVector();//destructor
+    void push_back(T);//insert the value at the end of the array. return a message if the array is full or successfully pushed
     int size() const
     {
         return arraySize;
@@ -57,6 +58,20 @@ SimpleVector<T>::~SimpleVector()
 {
     if (arraySize > 0)
         delete[] aptr;
+}
+template<class T>
+void SimpleVector<T>::push_back(T item)
+{
+
+    if (currentSize >= arraySize)
+        cout << "Array is full!";
+    else
+    {
+        aptr[currentSize] = item;
+        currentSize++;
+        cout << "Successfully pushed " << item << endl;
+    }
+
 }
 template<class T>
 T& SimpleVector<T>::operator[](int sub)
