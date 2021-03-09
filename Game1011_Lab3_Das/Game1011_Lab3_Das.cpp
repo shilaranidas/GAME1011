@@ -72,6 +72,7 @@ int main()
         cout << "ftest was not found.\n";
     else
         cout << "ftest was found at subscript " << result << endl;
+    cout << endl << endl << "======================================Q3===================================" << endl << endl;
     return 0;
 }
 
