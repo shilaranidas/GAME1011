@@ -26,6 +26,25 @@ int main()
 	cout << catchVar << endl;
 	stack.displayList();
 	cout << endl;
+	cout << "===============DynTempStack<non-primitive>==================" << endl;
+	DynTempStack<string> stack1;
+	string catchVar1;
+	cout << "push aa" << endl;
+	stack1.push("aa");
+	cout << "push bb" << endl;
+	stack1.push("bb");
+	stack1.displayList();
+	cout << "push cat" << endl;
+	stack1.push("cat");
+	stack1.displayList();
+
+	for (int i = 0; i < 3; i++)
+	{
+		cout << " pop: ";
+		stack1.pop(catchVar1);
+		cout << catchVar1 << endl;
+		stack1.displayList();
+	}
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
