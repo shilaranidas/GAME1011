@@ -142,6 +142,7 @@
     <ClCompile Include="Game1011_Lab5_Das.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="DynTempQueue.h" />
     <ClInclude Include="DynTempStack.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include "DynTempStack.h"
+#include "DynTempQueue.h"
 
 int main()
 {
@@ -45,6 +46,26 @@ int main()
 		cout << catchVar1 << endl;
 		stack1.displayList();
 	}
+
+	cout << "===============DynTempQueue<primitive>==================" << endl;
+	DynTempQueue<int> queue;
+	int catchVar2;
+	for (int i = 1; i <= 10; i = i + 2)
+	{
+		cout << "enqueue " << i * i << endl;
+		queue.enqueue(i * i);
+	}
+	queue.displayList();
+	cout << " dequeue: ";
+	queue.dequeue(catchVar2);
+	cout << catchVar2 << endl;
+
+	queue.displayList();
+
+	cout << " dequeue: ";
+	queue.dequeue(catchVar2);
+	cout << catchVar2 << endl;
+	queue.displayList();
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
