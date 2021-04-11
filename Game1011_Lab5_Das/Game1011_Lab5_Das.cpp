@@ -2,10 +2,30 @@
 //
 
 #include <iostream>
+#include "DynTempStack.h"
 
 int main()
 {
-    std::cout << "Hello World!\n";
+	cout << "===============DynTempStack<primitive>==================" << endl;
+	DynTempStack<int> stack;
+	int catchVar;
+	for (int i = 5; i < 15; i = i + 5)
+	{
+		cout << "push " << i << endl;
+		stack.push(i);
+	}
+	stack.displayList();
+	cout << " pop: ";
+	stack.pop(catchVar);
+	cout << catchVar << endl;
+
+	stack.displayList();
+
+	cout << " pop: ";
+	stack.pop(catchVar);
+	cout << catchVar << endl;
+	stack.displayList();
+	cout << endl;
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
