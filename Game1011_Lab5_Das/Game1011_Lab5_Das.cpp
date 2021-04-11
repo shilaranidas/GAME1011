@@ -66,6 +66,25 @@ int main()
 	queue.dequeue(catchVar2);
 	cout << catchVar2 << endl;
 	queue.displayList();
+	cout << "===============DynTempQueue<non-primitive>==================" << endl;
+	DynTempQueue<string> queue1;
+	string catchVar3;
+	cout << "enqueue aa" << endl;
+	queue1.enqueue("aa");
+	cout << "enqueue bb" << endl;
+	queue1.enqueue("bb");
+	queue1.displayList();
+	cout << "enqueue cat" << endl;
+	queue1.enqueue("cat");
+	queue1.displayList();
+
+	for (int i = 0; i < 3; i++)
+	{
+		cout << " dequeue: ";
+		queue1.dequeue(catchVar3);
+		cout << catchVar3 << endl;
+		queue1.displayList();
+	}
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
